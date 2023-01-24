@@ -1,5 +1,7 @@
+import Filters from "./components/Filters/Filters";
 import Input from "./components/Input/Input";
 import Task from "./components/Task/Task";
+import TaskList from "./components/TaskList/TaskList";
 import Title from "./components/Title/Title";
 
 function App() {
@@ -11,9 +13,13 @@ function App() {
         <Input />
       </div>
       <div className="task-container d-flex flex-column align-items-center py-2">
-        <Task />
-        <Task />
-        <Task />
+        <TaskList>
+          <Task />
+          <Task />
+          <Task />
+          <Task />
+        </TaskList>
+        <Filters />
       </div>
 
     </>

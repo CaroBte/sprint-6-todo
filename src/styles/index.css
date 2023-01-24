@@ -30,3 +30,8 @@ body {
     margin: auto;
     border-radius: 10px;
 }
+
+i {
+    color: var(--Dark-Grayish-Blue);
+    padding: 10px;
+}

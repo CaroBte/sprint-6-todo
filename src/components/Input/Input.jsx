@@ -2,11 +2,10 @@ import React from 'react'
 
 const Input = () => {
     return (
-        <>
-            <form style={{ width: '30%' }}>
-                <input className='form-control' placeholder='Create a new todo...' required />
-            </form>
-        </>
+        <div className='d-flex align-items-center' style={{ width: '30%' }}>
+            <i className='fa-regular fa-circle position-absolute'></i>
+            <input type='text' className='form-control px-5' placeholder='Create a new todo...' required />
+        </div>
     )
 }
 
