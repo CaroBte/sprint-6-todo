@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
+:root {
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+    --Light-Grayish-Blue: hsl(233, 11%, 84%);
+    --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+    --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+}
+
 body {
     font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--Very-Light-Grayish-Blue);
+}
+
+.header {
+    background-image: url(./bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    justify-content: space-evenly;
+    height: 35vh;
+    width: 100vw;
+    color: var(--Very-Light-Gray)
+}
+
+.task-container {
+    background-color: var(--Very-Light-Gray);
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;
 }
