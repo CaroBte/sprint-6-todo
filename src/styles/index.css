@@ -6,7 +6,7 @@
     --Light-Grayish-Blue: hsl(233, 11%, 84%);
     --Dark-Grayish-Blue: hsl(236, 9%, 61%);
     --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
-    --Very-Dark-Blue: hsl(235, 21%, 11%);
+    --Very-Dark-Blue: hsl(235, 82%, 28%);
     --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
 }
 
@@ -29,9 +29,60 @@ body {
     width: 30%;
     margin: auto;
     border-radius: 10px;
+    box-shadow: -4px 4px 39px -4px var(--Light-Grayish-Blue);
 }
 
 i {
-    color: var(--Dark-Grayish-Blue);
+    color: var(--Light-Grayish-Blue);
     padding: 10px;
+}
+
+p {
+    margin: 0;
+}
+
+.span-circle {
+    position: absolute;
+    left: 35%;
+    cursor: pointer;
+}
+
+.span-xmark {
+    position: absolute;
+    right: 35%;
+    cursor: pointer;
+}
+
+.task {
+    width: 100%;
+    border-bottom: solid 1px var(--Light-Grayish-Blue);
+}
+
+.task-text {
+    align-self: center;
+    position: relative;
+    left: 50%;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.filter-container {
+    width: 100%;
+    align-items: center;
+}
+
+.filter-text {
+    color: var(--Dark-Grayish-Blue);
+    font-size: 0.8rem;
+    margin: 2% 0;
+    text-align: center;
+}
+
+.btns-filter:hover {
+    cursor: pointer;
+    color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.clear-filter:hover {
+    cursor: pointer;
+    color: var(--Very-Dark-Desaturated-Blue);
 }
