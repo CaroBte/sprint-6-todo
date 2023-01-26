@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sprint-6-todo/static/css/main.fa28be60.css",
-    "main.js": "/sprint-6-todo/static/js/main.6ac9f58e.js",
+    "main.js": "/sprint-6-todo/static/js/main.70f75bcf.js",
     "static/media/bg-desktop-light.jpg": "/sprint-6-todo/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
     "index.html": "/sprint-6-todo/index.html",
     "main.fa28be60.css.map": "/sprint-6-todo/static/css/main.fa28be60.css.map",
-    "main.6ac9f58e.js.map": "/sprint-6-todo/static/js/main.6ac9f58e.js.map"
+    "main.70f75bcf.js.map": "/sprint-6-todo/static/js/main.70f75bcf.js.map"
   },
   "entrypoints": [
     "static/css/main.fa28be60.css",
-    "static/js/main.6ac9f58e.js"
+    "static/js/main.70f75bcf.js"
   ]
 }
