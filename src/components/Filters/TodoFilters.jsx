@@ -1,10 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-
-
-
-const TodoFilters = () => {
+const TodoFilters = ({ itemsLeft }) => {
     const [all, setAll] = useState(true)
     const [completed, setCompleted] = useState(false)
     const [active, setActive] = useState(false)
@@ -17,18 +14,28 @@ const TodoFilters = () => {
 
     return (
         <div className='row'>
-            <p className={`col-4 filter-text ${all ? 'active' : 'holi'}`}
-                onClick={() => { handleClick(true, false, false) }}>
-                All
-            </p>
-            <p className={`col-4 filter-text ${active ? 'active' : 'holi'}`}
-                onClick={() => { handleClick(false, false, true) }}>
-                Active
-            </p>
-            <p className={`col-4 filter-text ${completed ? 'active' : 'holi'}`}
-                onClick={() => { handleClick(false, true, false) }}>
-                Completed
-            </p>
+            <div className="col-3">
+                <p className="filter-text">{itemsLeft} items left</p>
+            </div>
+            <div className='col-5'>
+                <div className="row">
+                    <p className={`col-4 filter-text ${all ? 'active' : 'holi'}`}
+                        onClick={() => { handleClick(true, false, false) }}>
+                        All
+                    </p>
+                    <p className={`col-4 filter-text ${active ? 'active' : 'holi'}`}
+                        onClick={() => { handleClick(false, false, true) }}>
+                        Active
+                    </p>
+                    <p className={`col-4 filter-text ${completed ? 'active' : 'holi'}`}
+                        onClick={() => { handleClick(false, true, false) }}>
+                        Completed
+                    </p>
+                </div>
+            </div>
+            <div className="col-4">
+                <p className="filter-text">clear completed</p>
+            </div>
         </div>
     )
 }

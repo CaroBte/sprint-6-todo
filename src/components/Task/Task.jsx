@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Task = ({ task, deleteTask }) => {
+const Task = ({ task, deleteTask, _completedState }) => {
     let { title, completed, id } = task
 
     const [completedState, setCompletedState] = useState(completed)
 
     const completeTask = () => {
         completedState ? setCompletedState(false) : setCompletedState(true)
+        _completedState(id)
     }
 
     return (
