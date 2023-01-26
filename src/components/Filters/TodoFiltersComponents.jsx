@@ -20,16 +20,25 @@ const ItemsLeft = ({ total = 0 }) => {
 const BtnFiltersContainer = ({ children }) => {
     return (
         <div className='col-5 filter-text'>
-            <div className='d-flex justify-content-between'>
-                {children}
-            </div>
+            {children}
         </div>
     )
 }
 
 const FilterBtn = ({ action, active, filter }) => {
     return (
-        <p className={`btns-filter`}>{filter}</p>
+        <div className='row'>
+            <p className='col-4 filter-text'>
+                All
+            </p>
+            <p className='col-4 filter-text'>
+                Active
+            </p>
+            <p className='col-4 filter-text'>
+                Completed
+            </p>
+
+        </div>
     )
 }
 

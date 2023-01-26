@@ -75,14 +75,17 @@ p {
     font-size: 0.8rem;
     margin: 2% 0;
     text-align: center;
+    cursor: pointer;
 }
 
-.btns-filter:hover {
-    cursor: pointer;
-    color: var(--Very-Dark-Desaturated-Blue);
+.active {
+    color: var(--Very-Dark-Blue);
 }
 
-.clear-filter:hover {
+img {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: 8%;
     cursor: pointer;
-    color: var(--Very-Dark-Desaturated-Blue);
 }
