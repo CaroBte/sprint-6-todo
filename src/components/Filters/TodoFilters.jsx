@@ -14,7 +14,7 @@ const TodoFilters = ({ itemsLeft, clearCompleted, filter }) => {
     }
 
     return (
-        <div className='row'>
+        <div className='row align-items-center'>
             <div className="col-3">
                 <p className="filter-text">{itemsLeft} items left</p>
             </div>

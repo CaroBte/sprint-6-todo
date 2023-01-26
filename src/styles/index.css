@@ -54,14 +54,12 @@ p {
 }
 
 .task {
-    width: 100%;
     border-bottom: solid 1px var(--Light-Grayish-Blue);
 }
 
 .task-text {
     align-self: center;
-    position: relative;
-    left: 50%;
+    margin-left: 18%;
     color: var(--Very-Dark-Grayish-Blue);
 }
 
@@ -76,6 +74,7 @@ p {
     margin: 2% 0;
     text-align: center;
     cursor: pointer;
+    padding: 0;
 }
 
 .active {
@@ -92,5 +91,20 @@ img {
 
 .hidden {
     display: none !important;
+
+}
+
+@media screen and (max-width: 770px) {
+    .task-container {
+        width: 80%;
+    }
+
+    .span-circle {
+        left: 12%;
+    }
+
+    .span-xmark {
+        right: 12%;
+    }
 
 }
