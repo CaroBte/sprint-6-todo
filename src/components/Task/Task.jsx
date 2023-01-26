@@ -28,7 +28,7 @@ const Task = ({ task, deleteTask, _completedState, _filter }) => {
     return (
         <div className={`d-flex align-items-center task ${showTasks ? '' : 'hidden'}`}>
             <div className="d-flex align-items-center my-2 w-100">
-                {completedState ? (<img onClick={completeTask} src='/check-solid.svg' />)
+                {completedState ? (<span onClick={completeTask}><i class="fa-solid fa-check"></i></span>)
                     : (<span onClick={completeTask} className='span-circle'><i className='fa-regular fa-circle'></i></span>)
                 }
                 {completedState ? <p className="task-text my-2 text-decoration-line-through">{title}</p> : <p className={'task-text my-2'}>

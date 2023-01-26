@@ -20,16 +20,13 @@ function App() {
   const [filterOption, setFilterOption] = useState('all')
 
   const addTask = (taskInput) => {
-    console.log(taskInput)
     let template = {
       id: counterId,
       title: taskInput,
       completed: false
     }
     setCounterId(counterId + 1)
-    console.log(template);
     tasks.push(template)
-    console.log(tasks);
   }
 
   const deleteTask = (_id) => {
@@ -43,7 +40,6 @@ function App() {
     let tempArray = tasks
     tempArray[index].completed = !tempArray[index].completed
     setTasks(tempArray)
-    console.log('hola desde change');
     updateItemsLeft()
 
   }
@@ -57,7 +53,6 @@ function App() {
     }
 
     setItemsLeftNumber(taskLeft)
-    console.log('hola effect');
   }
 
   useEffect(() => {
