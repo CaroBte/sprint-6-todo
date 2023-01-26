@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const TodoFilters = ({ itemsLeft }) => {
+const TodoFilters = ({ itemsLeft, clearCompleted, filter }) => {
     const [all, setAll] = useState(true)
     const [completed, setCompleted] = useState(false)
     const [active, setActive] = useState(false)
@@ -10,6 +10,7 @@ const TodoFilters = ({ itemsLeft }) => {
         setAll(_data1)
         setCompleted(_data2)
         setActive(_data3)
+
     }
 
     return (
@@ -19,22 +20,22 @@ const TodoFilters = ({ itemsLeft }) => {
             </div>
             <div className='col-5'>
                 <div className="row">
-                    <p className={`col-4 filter-text ${all ? 'active' : 'holi'}`}
-                        onClick={() => { handleClick(true, false, false) }}>
+                    <p className={`col-4 filter-text ${all ? 'active' : ''}`}
+                        onClick={() => { handleClick(true, false, false); filter('all') }}>
                         All
                     </p>
-                    <p className={`col-4 filter-text ${active ? 'active' : 'holi'}`}
-                        onClick={() => { handleClick(false, false, true) }}>
+                    <p className={`col-4 filter-text ${active ? 'active' : ''}`}
+                        onClick={() => { handleClick(false, false, true); filter('active') }}>
                         Active
                     </p>
-                    <p className={`col-4 filter-text ${completed ? 'active' : 'holi'}`}
-                        onClick={() => { handleClick(false, true, false) }}>
+                    <p className={`col-4 filter-text ${completed ? 'active' : ''}`}
+                        onClick={() => { handleClick(false, true, false); filter('completed') }}>
                         Completed
                     </p>
                 </div>
             </div>
             <div className="col-4">
-                <p className="filter-text">clear completed</p>
+                <p onClick={clearCompleted} className="filter-text">Clear completed</p>
             </div>
         </div>
     )

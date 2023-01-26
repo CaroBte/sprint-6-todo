@@ -89,3 +89,8 @@ img {
     left: 8%;
     cursor: pointer;
 }
+
+.hidden {
+    display: none !important;
+
+}

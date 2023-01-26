@@ -1,10 +1,24 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react'
 
-const Task = ({ task, deleteTask, _completedState }) => {
+const Task = ({ task, deleteTask, _completedState, _filter }) => {
     let { title, completed, id } = task
 
     const [completedState, setCompletedState] = useState(completed)
+    const [showTasks, setShowTasks] = useState(true)
+
+    useEffect(() => {
+        if (_filter === 'all') {
+            setShowTasks(true);
+        } else if (_filter === 'active' && completedState === false) {
+            setShowTasks(true)
+        } else if (_filter === 'completed' && completedState === true) {
+            setShowTasks(true)
+        } else {
+            setShowTasks(false)
+        }
+    }, [_filter])
 
     const completeTask = () => {
         completedState ? setCompletedState(false) : setCompletedState(true)
@@ -12,7 +26,7 @@ const Task = ({ task, deleteTask, _completedState }) => {
     }
 
     return (
-        <div className='d-flex align-items-center task'>
+        <div className={`d-flex align-items-center task ${showTasks ? '' : 'hidden'}`}>
             <div className="d-flex align-items-center my-2">
                 {completedState ? (<img onClick={completeTask} src='/check-solid.svg' />)
                     : (<span onClick={completeTask} className='span-circle'><i className='fa-regular fa-circle'></i></span>)

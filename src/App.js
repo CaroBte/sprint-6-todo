@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/react";
 import { useEffect, useState } from "react";
 import TodoFilters from "./components/Filters/TodoFilters";
 import Input from "./components/Input/Input";
@@ -18,6 +17,7 @@ function App() {
 
   const [counterId, setCounterId] = useState(1)
   const [itemsLeftNumber, setItemsLeftNumber] = useState(0)
+  const [filterOption, setFilterOption] = useState('all')
 
   const addTask = (taskInput) => {
     console.log(taskInput)
@@ -44,21 +44,31 @@ function App() {
     tempArray[index].completed = !tempArray[index].completed
     setTasks(tempArray)
     console.log('hola desde change');
+    updateItemsLeft()
 
   }
 
-  useEffect(() => {
+  const updateItemsLeft = () => {
     let taskLeft = 0
     for (let i = 0; i < tasks.length; i++) {
       if (tasks[i].completed === false) {
         taskLeft++
       }
     }
+
     setItemsLeftNumber(taskLeft)
     console.log('hola effect');
-  },
-    [tasks, counterId])
+  }
 
+  useEffect(() => {
+    updateItemsLeft()
+  }, [tasks, counterId])
+
+  const clearCompleted = () => {
+    setTasks(oldValues => {
+      return oldValues.filter(task => task.completed === false)
+    })
+  }
 
 
   return (
@@ -71,8 +81,9 @@ function App() {
         <TaskList
           tasks={tasks}
           deleteTask2={deleteTask}
-          completedState={changeTaskState} />
-        <TodoFilters itemsLeft={itemsLeftNumber} />
+          completedState={changeTaskState}
+          filter={filterOption} />
+        <TodoFilters itemsLeft={itemsLeftNumber} clearCompleted={clearCompleted} filter={(option) => { setFilterOption(option) }} />
       </div>
 
     </>
